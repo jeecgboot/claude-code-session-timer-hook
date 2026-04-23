@@ -6,9 +6,48 @@ Claude Code 每轮对话结束自动显示耗时：
 ⏱ 本轮耗时 4.72s · 累计 1m18s
 ```
 
+项目地址：<https://github.com/jeecgboot/claude-code-session-timer-hook>
+
+## 获取
+
+下载方式三选一：
+
+### 方式 1：git clone
+
+```bash
+git clone https://github.com/jeecgboot/claude-code-session-timer-hook.git
+cd claude-code-session-timer-hook
+```
+
+然后执行下方【安装】中的指令（Claude 会从当前目录读取 `session_timer.py`）。
+
+### 方式 2：curl 单文件
+
+```bash
+mkdir -p ~/.claude/hooks
+curl -fsSL https://raw.githubusercontent.com/jeecgboot/claude-code-session-timer-hook/main/session_timer.py \
+    -o ~/.claude/hooks/session_timer.py
+```
+
+文件已就位，跳过【安装】的第 1 步，让 Claude 只合并 hook 配置即可。
+
+### 方式 3（最懒）：直接让 Claude Code 从 GitHub 装
+
+连 git、curl 都不用敲。把下面这段话**完整复制**粘贴给 Claude Code：
+
+```
+请帮我从 https://github.com/jeecgboot/claude-code-session-timer-hook 安装 session_timer。步骤：
+
+1. 用 WebFetch 读取仓库 README.md 了解完整安装说明。
+2. 下载 session_timer.py 到 ~/.claude/hooks/(目录不存在就创建)。下载地址：
+   https://raw.githubusercontent.com/jeecgboot/claude-code-session-timer-hook/main/session_timer.py
+3. 按 README 中的 hooks 配置合并到我的 ~/.claude/settings.json（保留现有配置，不要整段覆盖）。
+4. 校验 settings.json 是合法 JSON，然后提示我敲 /hooks 激活。
+```
+
 ## 安装（让 Claude Code 自动完成）
 
-把以下**这段话完整复制**粘贴给 Claude Code，它会自动把脚本放到 `~/.claude/hooks/` 并合并 `~/.claude/settings.json`：
+如果你用方式 1 本地 clone 后 `cd` 进目录，把下面**这段话完整复制**粘贴给 Claude Code，它会自动把脚本放到 `~/.claude/hooks/` 并合并 `~/.claude/settings.json`：
 
 ```
 请帮我安装 session_timer。步骤：
