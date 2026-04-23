@@ -1,6 +1,8 @@
 # Session Timer
 
-Claude Code 每轮对话结束自动显示耗时：
+> Claude Code 每轮 + 累计耗时自动反馈
+
+每轮对话结束自动显示本轮耗时与累计耗时：
 
 ```
 ⏱ 本轮耗时 4.72s · 累计 1m18s
