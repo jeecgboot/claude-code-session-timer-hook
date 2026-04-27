@@ -41,6 +41,10 @@
 - **自动显示耗时**：装完什么都不用做，每轮 Claude 回复末尾自动出现
 - **清空累计**：对 Claude 说「清空累计耗时」，或终端跑 `python ~/.claude/hooks/session_timer.py reset --all`
 
+## 开源协议
+
+基于 [Apache License 2.0](./LICENSE) 开源。
+
 ## 卸载
 
 ```

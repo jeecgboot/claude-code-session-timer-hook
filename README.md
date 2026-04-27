@@ -41,6 +41,10 @@ Once installed, run `/hooks` to reload the config — the stopwatch will show up
 - **Automatic display** — nothing else to do; each Claude reply ends with the timer line.
 - **Reset the cumulative total** — tell Claude "reset cumulative time", or run `python ~/.claude/hooks/session_timer.py reset --all` in your terminal.
 
+## License
+
+Licensed under the [Apache License 2.0](./LICENSE).
+
 ## Uninstall
 
 ```
