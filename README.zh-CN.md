@@ -12,16 +12,18 @@
 
 项目地址：<https://github.com/jeecgboot/claude-code-session-timer-hook>
 
-## 安装（一段话丢给 Claude Code）
+## 全局安装（一段话丢给 Claude Code）
+
+安装到 `~/.claude/` 下，**所有项目全局生效**，无需每个项目单独配置。
 
 把下面这段话**完整复制**粘贴给 Claude Code，它会自己下载脚本、合并配置：
 
 ```
-请帮我从 https://github.com/jeecgboot/claude-code-session-timer-hook 安装 session_timer。步骤：
+请帮我从 https://github.com/jeecgboot/claude-code-session-timer-hook **全局安装** session_timer（装到 ~/.claude/ 下，不要装到当前项目的 .claude/ 里）。步骤：
 
 1. 下载 session_timer.py 到 ~/.claude/hooks/(目录不存在就创建)。下载地址：
    https://raw.githubusercontent.com/jeecgboot/claude-code-session-timer-hook/main/session_timer.py
-2. 合并以下 4 个 hook 到 ~/.claude/settings.json 的 hooks 字段(保留我现有配置，不要覆盖)：
+2. 合并以下 4 个 hook 到**全局** ~/.claude/settings.json 的 hooks 字段(保留我现有配置，不要覆盖)：
    - SessionStart     → python "$HOME/.claude/hooks/session_timer.py" session_start 2>/dev/null || true
    - UserPromptSubmit → python "$HOME/.claude/hooks/session_timer.py" start         2>/dev/null || true
    - Stop             → python "$HOME/.claude/hooks/session_timer.py" stop          2>/dev/null || true

@@ -12,16 +12,18 @@ At the end of every Claude turn you'll see the time spent on this round **and** 
 
 Project: <https://github.com/jeecgboot/claude-code-session-timer-hook>
 
-## Install (paste this paragraph into Claude Code)
+## Global Install (paste this paragraph into Claude Code)
+
+Installs into `~/.claude/` so the timer is enabled **globally for every project** — no per-project setup.
 
 **Copy the block below verbatim** and send it to Claude Code — it will download the script and merge the config for you:
 
 ```
-Please install session_timer from https://github.com/jeecgboot/claude-code-session-timer-hook. Steps:
+Please install session_timer from https://github.com/jeecgboot/claude-code-session-timer-hook **globally** (under ~/.claude/, NOT into the current project's .claude/). Steps:
 
 1. Download session_timer.py to ~/.claude/hooks/ (create the directory if it doesn't exist). URL:
    https://raw.githubusercontent.com/jeecgboot/claude-code-session-timer-hook/main/session_timer.py
-2. Merge the following 4 hooks into the `hooks` field of ~/.claude/settings.json (keep my existing config — do not overwrite):
+2. Merge the following 4 hooks into the `hooks` field of the **global** ~/.claude/settings.json (keep my existing config — do not overwrite):
    - SessionStart     → python "$HOME/.claude/hooks/session_timer.py" session_start 2>/dev/null || true
    - UserPromptSubmit → python "$HOME/.claude/hooks/session_timer.py" start         2>/dev/null || true
    - Stop             → python "$HOME/.claude/hooks/session_timer.py" stop          2>/dev/null || true
